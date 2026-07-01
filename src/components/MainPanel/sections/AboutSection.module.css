@@ -1,3 +1,48 @@
+.introRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 16px;
+}
+
+.introText {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  color: var(--text-h);
+  margin: 0 0 8px;
+}
+
+.photo {
+  flex: none;
+  width: 200px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+  .introRow {
+    flex-direction: column;
+  }
+
+  .photo {
+    width: 160px;
+  }
+
+  .name {
+    font-size: 28px;
+  }
+}
+
 .paragraphs {
   display: flex;
   flex-direction: column;
