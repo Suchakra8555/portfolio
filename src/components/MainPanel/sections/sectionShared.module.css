@@ -1,0 +1,10 @@
+.heading {
+  margin: 0 0 8px;
+  text-align: left;
+}
+
+.intro {
+  margin: 0 0 28px;
+  text-align: left;
+  max-width: 60ch;
+}

@@ -1,0 +1,46 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.item {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+.itemHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.role {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.dates {
+  font-size: 14px;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.company {
+  margin: 2px 0 12px;
+  color: var(--accent);
+  font-size: 15px;
+}
+
+.bullets {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
