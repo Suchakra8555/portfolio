@@ -2,6 +2,7 @@ import type { Section } from '../../hooks/useActiveSection'
 import styles from './MainPanel.module.css'
 import { AboutSection } from './sections/AboutSection'
 import { AchievementsSection } from './sections/AchievementsSection'
+import { ContactSection } from './sections/ContactSection'
 import { EducationSection } from './sections/EducationSection'
 import { ExperienceSection } from './sections/ExperienceSection'
 import { ProjectsSection } from './sections/ProjectsSection'
@@ -22,6 +23,8 @@ function renderSection(activeSection: Section) {
       return <EducationSection />
     case 'achievements':
       return <AchievementsSection />
+    case 'contact':
+      return <ContactSection />
   }
 }
 

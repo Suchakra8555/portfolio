@@ -64,6 +64,9 @@ const NAV_CLIP_POOLS: Record<Section, ClipConfig[]> = {
   achievements: ['joyful_jump_l', 'punching_bag', 'shoot_gun', 'flying_kick'].map((name) =>
     once(`/${name}.mp4`),
   ),
+  contact: ['waving_gesture', 'wave_hello_3', 'happy_idle', 'walk_swing_arms'].map((name) =>
+    once(`/${name}.mp4`),
+  ),
 }
 const navClipBags = Object.fromEntries(
   (Object.keys(NAV_CLIP_POOLS) as Section[]).map((section) => [

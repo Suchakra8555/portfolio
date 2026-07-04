@@ -7,6 +7,7 @@ const NAV_ITEMS: { section: Section; label: string }[] = [
   { section: 'projects', label: 'Projects' },
   { section: 'education', label: 'Education' },
   { section: 'achievements', label: 'Achievements' },
+  { section: 'contact', label: 'Contact' },
 ]
 
 interface NavProps {

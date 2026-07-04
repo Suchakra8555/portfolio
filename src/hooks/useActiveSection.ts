@@ -1,8 +1,21 @@
 import { useCallback, useEffect, useState } from 'react'
 
-export type Section = 'about' | 'experience' | 'projects' | 'education' | 'achievements'
+export type Section =
+  | 'about'
+  | 'experience'
+  | 'projects'
+  | 'education'
+  | 'achievements'
+  | 'contact'
 
-const SECTIONS: Section[] = ['about', 'experience', 'projects', 'education', 'achievements']
+const SECTIONS: Section[] = [
+  'about',
+  'experience',
+  'projects',
+  'education',
+  'achievements',
+  'contact',
+]
 const DEFAULT_SECTION: Section = 'about'
 
 function parseHash(hash: string): Section | null {
