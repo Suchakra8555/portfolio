@@ -13,6 +13,23 @@
   flex-wrap: wrap;
 }
 
+.degreeGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: var(--code-bg);
+  padding: 4px 6px;
+  flex-shrink: 0;
+}
+
 .degree {
   font-size: 18px;
   font-weight: 600;

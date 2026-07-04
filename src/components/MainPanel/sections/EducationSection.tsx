@@ -10,7 +10,12 @@ export function EducationSection() {
       {resume.education.map((edu) => (
         <div className={styles.card} key={edu.institution}>
           <div className={styles.head}>
-            <span className={styles.degree}>{edu.degree}</span>
+            <div className={styles.degreeGroup}>
+              {edu.logo && (
+                <img className={styles.logo} src={edu.logo} alt="" aria-hidden="true" />
+              )}
+              <span className={styles.degree}>{edu.degree}</span>
+            </div>
             <span className={styles.years}>{edu.years}</span>
           </div>
           <p className={styles.institution}>{edu.institution}</p>

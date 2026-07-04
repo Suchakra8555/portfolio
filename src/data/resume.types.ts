@@ -27,6 +27,8 @@ export interface Experience {
   id: string
   role: string
   company: string
+  logo?: string
+  logoBg?: string
   start: string
   end: string
   bullets: string[]
@@ -48,6 +50,7 @@ export interface EducationEntry {
   institution: string
   degree: string
   specialization: string
+  logo?: string
   years: string
   cgpa: string
   coursework: string[]

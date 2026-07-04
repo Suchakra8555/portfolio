@@ -11,7 +11,18 @@ export function ExperienceSection() {
         {resume.experience.map((job) => (
           <article className={styles.item} key={job.id}>
             <div className={styles.itemHead}>
-              <span className={styles.role}>{job.role}</span>
+              <div className={styles.roleGroup}>
+                {job.logo && (
+                  <img
+                    className={styles.logo}
+                    src={job.logo}
+                    alt=""
+                    aria-hidden="true"
+                    style={job.logoBg ? { background: job.logoBg } : undefined}
+                  />
+                )}
+                <span className={styles.role}>{job.role}</span>
+              </div>
               <span className={styles.dates}>
                 {job.start} – {job.end}
               </span>
