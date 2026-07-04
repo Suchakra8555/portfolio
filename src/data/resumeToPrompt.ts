@@ -1,4 +1,4 @@
-import { resume } from './resume'
+import { resume } from './resume.js'
 
 export function buildSystemPrompt(): string {
   const { basics, about, skills, experience, projects, education, achievements } = resume

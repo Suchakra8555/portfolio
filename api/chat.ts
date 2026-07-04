@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { buildSystemPrompt } from '../src/data/resumeToPrompt'
+import { buildSystemPrompt } from '../src/data/resumeToPrompt.js'
 
 const GROQ_ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions'
 const GROQ_MODEL = 'llama-3.3-70b-versatile'
