@@ -19,6 +19,14 @@
   font-size: 18px;
   font-weight: 600;
   color: var(--text-h);
+  margin: 0 0 16px;
+}
+
+.phoneLink {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-h);
   margin: 0 0 8px;
 }
 
@@ -26,6 +34,13 @@
   margin: 0 0 20px;
   font-size: 14.5px;
   color: var(--text);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 24px;
 }
 
 .cta {
@@ -37,4 +52,41 @@
   border: 1px solid var(--accent-border);
   border-radius: 999px;
   padding: 9px 20px;
+}
+
+.secondaryCta {
+  display: inline-block;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text-h);
+  background: var(--social-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 9px 20px;
+}
+
+.secondaryCta:hover {
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+
+.profiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.profileLink {
+  font-size: 14.5px;
+  color: var(--text);
+  background: var(--social-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  text-decoration: none;
+}
+
+.profileLink:hover {
+  border-color: var(--accent-border);
+  color: var(--accent);
 }

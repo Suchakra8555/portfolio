@@ -1,0 +1,20 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/resume", "destination": "/Suchakra_Kumar_Gattu_Resume.pdf" },
+    { "source": "/resume/", "destination": "/Suchakra_Kumar_Gattu_Resume.pdf" }
+  ],
+  "headers": [
+    {
+      "source": "/Suchakra_Kumar_Gattu_Resume.pdf",
+      "headers": [
+        { "key": "Content-Type", "value": "application/pdf" },
+        {
+          "key": "Content-Disposition",
+          "value": "inline; filename=\"Suchakra_Kumar_Gattu_Resume.pdf\""
+        },
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    }
+  ]
+}

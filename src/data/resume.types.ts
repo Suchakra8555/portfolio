@@ -4,7 +4,9 @@ export interface Basics {
   title: string
   summary: string
   location: string
+  phone: string
   email: string
+  resumeUrl: string
   links: {
     github?: string
     linkedin?: string
