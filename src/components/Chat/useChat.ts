@@ -25,7 +25,10 @@ export function useChat({ onMessageSent, onResponseReceived }: UseChatOptions = 
       const userMessage: ChatMessage = { id: nextId(), role: 'user', content: trimmed }
       const history = messages.slice(-10).map(({ role, content }) => ({ role, content }))
 
-      setMessages((prev) => [...prev, userMessage])
+      // Add a temporary "thinking" placeholder shown while the assistant generates a response
+      const thinkMessageId = nextId()
+      const thinkingMessage: ChatMessage = { id: thinkMessageId, role: 'assistant', content: '<think>' }
+      setMessages((prev) => [...prev, userMessage, thinkingMessage])
       setError(null)
       setLoading(true)
       onMessageSent?.()
@@ -44,7 +47,12 @@ export function useChat({ onMessageSent, onResponseReceived }: UseChatOptions = 
         }
 
         const data = (await response.json()) as ChatResponseBody
-        setMessages((prev) => [...prev, { id: nextId(), role: 'assistant', content: data.reply }])
+        // Replace the thinking placeholder with the actual reply
+        setMessages((prev) =>
+          prev.map((msg) =>
+            msg.id === thinkMessageId ? { ...msg, content: data.reply } : msg,
+          ),
+        )
         onResponseReceived?.()
       } catch (err) {
         setError(

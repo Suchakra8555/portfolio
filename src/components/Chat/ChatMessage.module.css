@@ -31,3 +31,18 @@
   color: var(--text-h);
   border-bottom-left-radius: 4px;
 }
+.typing {
+  display: inline-block;
+  width: 1rem;
+  text-align: center;
+  color: var(--text-h);
+}
+.typing::after {
+  content: '...';
+  animation: blink 1s steps(4) infinite;
+}
+@keyframes blink {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
