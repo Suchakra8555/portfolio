@@ -89,10 +89,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     const data = (await groqResponse.json()) as GroqResponseBody
-    const reply = data.choices?.[0]?.message?.content?.trim()
+    const rawReply = data.choices?.[0]?.message?.content?.trim()
+
+    if (!rawReply) {
+      console.error('Groq response missing content:', JSON.stringify(data))
+      res.status(502).json({ error: 'Something went wrong reaching the assistant. Please try again.' })
+      return
+    }
+
+    // Strip <think>...</think> tags that some models (e.g. Qwen) emit
+    const reply = rawReply.replace(/<think>[\s\S]*?<\/think>/gi, '').trim()
 
     if (!reply) {
-      console.error('Groq response missing content:', JSON.stringify(data))
+      console.error('Groq response was only thinking tags:', rawReply)
       res.status(502).json({ error: 'Something went wrong reaching the assistant. Please try again.' })
       return
     }
