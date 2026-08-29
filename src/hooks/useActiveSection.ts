@@ -7,6 +7,7 @@ export type Section =
   | 'education'
   | 'achievements'
   | 'contact'
+  | 'resume'
 
 const SECTIONS: Section[] = [
   'about',
@@ -15,6 +16,7 @@ const SECTIONS: Section[] = [
   'education',
   'achievements',
   'contact',
+  'resume',
 ]
 const DEFAULT_SECTION: Section = 'about'
 
@@ -24,9 +26,13 @@ function parseHash(hash: string): Section | null {
 }
 
 export function useActiveSection() {
-  const [activeSection, setActiveSectionState] = useState<Section>(
-    () => parseHash(window.location.hash) ?? DEFAULT_SECTION,
-  )
+  const [activeSection, setActiveSectionState] = useState<Section>(() => {
+    const fromHash = parseHash(window.location.hash)
+    if (fromHash) return fromHash
+    // Visiting /resume directly (e.g. a shared link) opens straight to the resume view.
+    if (window.location.pathname.replace(/\/$/, '') === '/resume') return 'resume'
+    return DEFAULT_SECTION
+  })
 
   useEffect(() => {
     const onHashChange = () => {

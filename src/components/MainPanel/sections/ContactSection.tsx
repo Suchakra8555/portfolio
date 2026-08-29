@@ -30,12 +30,7 @@ export function ContactSection() {
           <a className={styles.cta} href={`mailto:${basics.email}`}>
             Email me
           </a>
-          <a
-            className={styles.secondaryCta}
-            href={basics.resumeUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a className={styles.secondaryCta} href="#resume">
             View resume
           </a>
         </div>

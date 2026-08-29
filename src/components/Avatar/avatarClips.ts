@@ -67,6 +67,9 @@ const NAV_CLIP_POOLS: Record<Section, ClipConfig[]> = {
   contact: ['waving_gesture', 'wave_hello_3', 'happy_idle', 'walk_swing_arms'].map((name) =>
     once(`/${name}.mp4`),
   ),
+  resume: ['standard_walk', 'walk_sway', 'happy_idle', 'floating'].map((name) =>
+    once(`/${name}.mp4`),
+  ),
 }
 const navClipBags = Object.fromEntries(
   (Object.keys(NAV_CLIP_POOLS) as Section[]).map((section) => [

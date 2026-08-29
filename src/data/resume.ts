@@ -11,6 +11,7 @@ export const resume: Resume = {
     phone: '+91 8555059710',
     email: 'suchakrakumargattu@gmail.com',
     resumeUrl: '/resume',
+    resumeFileUrl: '/Suchakra_Kumar_Gattu_Resume.pdf',
     links: {
       github: 'https://github.com/suchakra8555',
       linkedin: 'https://www.linkedin.com/in/suchakra-kumar-gattu',

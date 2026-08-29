@@ -25,14 +25,13 @@ export function Header({ active, onSelect }: HeaderProps) {
       </div>
       <div className={styles.right}>
         <Nav active={active} onSelect={onSelect} />
-        <a
+        <button
+          type="button"
           className={styles.resume}
-          href={resume.basics.resumeUrl}
-          target="_blank"
-          rel="noreferrer"
+          onClick={() => onSelect('resume')}
         >
           Resume
-        </a>
+        </button>
         <ThemeToggle />
       </div>
     </div>
