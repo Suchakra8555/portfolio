@@ -1,8 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
-    { "source": "/resume", "destination": "/Suchakra_Kumar_Gattu_Resume.pdf" },
-    { "source": "/resume/", "destination": "/Suchakra_Kumar_Gattu_Resume.pdf" }
+    { "source": "/resume", "destination": "/index.html" },
+    { "source": "/resume/", "destination": "/index.html" }
   ],
   "headers": [
     {

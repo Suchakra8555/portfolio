@@ -6,6 +6,7 @@ import { ContactSection } from './sections/ContactSection'
 import { EducationSection } from './sections/EducationSection'
 import { ExperienceSection } from './sections/ExperienceSection'
 import { ProjectsSection } from './sections/ProjectsSection'
+import { ResumeSection } from './sections/ResumeSection'
 
 interface MainPanelProps {
   activeSection: Section
@@ -25,6 +26,8 @@ function renderSection(activeSection: Section) {
       return <AchievementsSection />
     case 'contact':
       return <ContactSection />
+    case 'resume':
+      return <ResumeSection />
   }
 }
 
