@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
 import { buildSystemPrompt } from '../src/data/resumeToPrompt.js'
+import { stripThinkTags } from '../src/lib/stripThinkTags.js'
 
 const GROQ_ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions'
 const GROQ_MODEL = 'qwen/qwen3.6-27b'
@@ -71,6 +72,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         ],
         temperature: 0.6,
         max_tokens: 400,
+        // qwen3.6-27b is a reasoning model: without this it emits a <think>...</think>
+        // block before the real answer, which can consume the whole token budget and
+        // get cut off mid-thought. `none` skips reasoning entirely for this chat use
+        // case, and `hidden` is belt-and-suspenders in case reasoning still occurs.
+        reasoning_effort: 'none',
+        reasoning_format: 'hidden',
       }),
     })
 
@@ -97,8 +104,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return
     }
 
-    // Strip <think>...</think> tags that some models (e.g. Qwen) emit
-    const reply = rawReply.replace(/<think>[\s\S]*?<\/think>/gi, '').trim()
+    // Defense in depth: strip any <think>...</think> tags that slip through
+    // even with reasoning_format: 'hidden' (e.g. a future model swap).
+    const reply = stripThinkTags(rawReply)
 
     if (!reply) {
       console.error('Groq response was only thinking tags:', rawReply)

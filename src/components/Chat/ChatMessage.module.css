@@ -31,6 +31,48 @@
   color: var(--text-h);
   border-bottom-left-radius: 4px;
 }
+
+.markdown {
+  /* Let normal HTML flow (soft-wrapped source lines join into one paragraph)
+     take over from the plain-text bubble's pre-wrap; <pre>/<code> keep their
+     own verbatim whitespace regardless. */
+  white-space: normal;
+}
+.markdown :global(p) {
+  margin: 0 0 0.5em;
+}
+.markdown :global(p:last-child) {
+  margin-bottom: 0;
+}
+.markdown :global(ul),
+.markdown :global(ol) {
+  margin: 0 0 0.5em;
+  padding-left: 1.2em;
+}
+.markdown :global(ul:last-child),
+.markdown :global(ol:last-child) {
+  margin-bottom: 0;
+}
+.markdown :global(code) {
+  background: rgba(127, 127, 127, 0.18);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  font-size: 0.9em;
+}
+.markdown :global(pre) {
+  overflow-x: auto;
+  padding: 0.6em;
+  border-radius: 8px;
+  background: rgba(127, 127, 127, 0.12);
+}
+.markdown :global(pre code) {
+  background: none;
+  padding: 0;
+}
+.markdown :global(a) {
+  color: inherit;
+  text-decoration: underline;
+}
 .typing {
   display: inline-block;
   width: 1rem;

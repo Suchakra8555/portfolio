@@ -1,10 +1,6 @@
 import { useCallback, useState } from 'react'
 import type { ChatErrorBody, ChatMessage, ChatRequestBody, ChatResponseBody } from './chat.types'
-
-/** Strip <think>...</think> tags that some models emit. */
-function stripThinkingTags(text: string): string {
-  return text.replace(/<think>[\s\S]*?<\/think>/gi, '').trim()
-}
+import { stripThinkTags } from '../../lib/stripThinkTags'
 
 let idCounter = 0
 function nextId() {
@@ -55,7 +51,7 @@ export function useChat({ onMessageSent, onResponseReceived }: UseChatOptions = 
         // Replace the thinking placeholder with the actual reply
         setMessages((prev) =>
           prev.map((msg) =>
-            msg.id === thinkMessageId ? { ...msg, content: stripThinkingTags(data.reply) } : msg,
+            msg.id === thinkMessageId ? { ...msg, content: stripThinkTags(data.reply) } : msg,
           ),
         )
         onResponseReceived?.()
