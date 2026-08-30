@@ -7,6 +7,7 @@ export interface Basics {
   phone: string
   email: string
   resumeUrl: string
+  resumeFileUrl: string
   links: {
     github?: string
     linkedin?: string
