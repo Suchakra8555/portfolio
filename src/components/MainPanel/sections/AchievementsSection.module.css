@@ -5,8 +5,8 @@
 }
 
 .item {
-  border: 1px solid var(--border);
-  border-radius: 12px;
+  border: var(--stroke) solid var(--border);
+  border-radius: 20px;
   padding: 18px 22px;
   text-align: left;
 }

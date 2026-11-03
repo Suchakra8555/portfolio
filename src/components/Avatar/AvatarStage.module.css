@@ -1,11 +1,39 @@
+.stage {
+  position: relative;
+  flex: none;
+}
+
 .video {
   width: 100%;
   aspect-ratio: 4 / 3;
-  max-height: 220px;
+  max-height: 240px;
   object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: var(--code-bg);
+  border-radius: 28px;
+  border: 4px solid var(--border);
+  box-shadow:
+    0 0 0 6px var(--die-cut),
+    var(--shadow);
+  background: var(--surface);
   display: block;
-  flex: none;
+}
+
+.toggle {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  appearance: none;
+  min-height: 36px;
+  padding: 4px 14px;
+  border: var(--stroke) solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-h);
+  font-family: var(--heading);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.toggle:hover {
+  background: var(--accent-bg);
 }

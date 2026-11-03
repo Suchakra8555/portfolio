@@ -1,10 +1,12 @@
 .heading {
   margin: 0 0 8px;
   text-align: left;
+  font-size: clamp(28px, 3vw, 36px);
+  text-wrap: balance;
 }
 
 .intro {
   margin: 0 0 28px;
   text-align: left;
-  max-width: 60ch;
+  max-width: 62ch;
 }

@@ -1,6 +1,6 @@
 .card {
-  border: 1px solid var(--border);
-  border-radius: 12px;
+  border: var(--stroke) solid var(--border);
+  border-radius: 20px;
   padding: 20px 24px;
   text-align: left;
 }
@@ -70,7 +70,7 @@
 .tag {
   font-size: 12px;
   color: var(--text);
-  border: 1px solid var(--border);
+  border: var(--stroke) solid var(--border);
   border-radius: 999px;
   padding: 2px 9px;
 }

@@ -13,21 +13,22 @@
 .bubble {
   max-width: 85%;
   padding: 10px 14px;
-  border-radius: 14px;
-  font-size: 14.5px;
+  border: var(--stroke) solid var(--border);
+  border-radius: 18px;
+  font-size: 15px;
   line-height: 1.4;
   text-align: left;
   white-space: pre-wrap;
 }
 
 .row[data-role='user'] .bubble {
-  background: #6d28d9;
-  color: #fff;
+  background: var(--accent-solid);
+  color: var(--on-accent);
   border-bottom-right-radius: 4px;
 }
 
 .row[data-role='assistant'] .bubble {
-  background: var(--code-bg);
+  background: var(--surface);
   color: var(--text-h);
   border-bottom-left-radius: 4px;
 }
